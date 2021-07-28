@@ -1,0 +1,10 @@
+---
+  - name: example01
+    hosts: local
+    # to run without ssh, enables localhost use on a personal machine
+    connection: local
+    tasks:
+      - name: install developer tools
+        apt:
+          name: vim
+          state: latest
