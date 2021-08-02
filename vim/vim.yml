@@ -3,6 +3,7 @@
     hosts: local
     # to run without ssh, enables localhost use on a personal machine
     connection: local
+    become: yes
     tasks:
       - name: install developer tools
         apt:

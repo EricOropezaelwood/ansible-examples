@@ -1,0 +1,26 @@
+---
+  - name: example01
+    hosts: local
+    # to run without ssh, enables localhost use on a personal machine
+    connection: local
+    become: false
+    tasks:
+      - name: install java
+        apt:
+          name:
+            - openjdk-11-jdk
+          state: latest
+      - name: download jenkins repo
+        get_url:
+          url: http://pkg.jenkins-ci.org/debian/jenkins.repo
+          dest: ~/
+
+      - name: import jenkins key
+        rpm_key:
+          state: present
+          key: https://jenkins-ci.org/debian/jenkins-ci.org.key
+
+      - name: install jenkins
+        yum:
+          name: jenkins
+          state: present

@@ -1,0 +1,14 @@
+---
+- name: Example 01
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+#  install_dev_tools:
+#    - name: install helpful developer tools
+#      apt:
+#        name: vim
+#        state: latest
