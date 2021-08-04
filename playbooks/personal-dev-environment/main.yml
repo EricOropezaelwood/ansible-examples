@@ -1,0 +1,8 @@
+---
+- name: example01
+  hosts: local
+  # to run without ssh, enables localhost use on a personal machine
+  connection: local
+  become: yes
+  tasks:
+    - import_tasks: tasks/vim.yml

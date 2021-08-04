@@ -1,0 +1,27 @@
+---
+  - name: example01
+    hosts: local
+    vars:
+      - ansible_python_interpreter: /usr/bin/python3
+    # to run without ssh, enables localhost use on a personal machine
+    connection: local
+    become: yes
+    tasks:
+      - name: install java
+        apt:
+          name:
+            - openjdk-11-jdk
+          state: latest
+      - name: Add the Jenkins public GPG key to the apt repo
+        apt_key:
+          url: https://pkg.jenkins.io/debian/jenkins.io.key
+          state: present
+      - name: download jenkins repo
+        shell: 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+      - name: Update apt cache
+        apt:
+          update_cache: yes
+      - name: install jenkins
+        apt:
+          name:
+            - jenkins

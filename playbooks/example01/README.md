@@ -17,4 +17,6 @@ inventory file in the ansible-playbook command
 ```ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory vim.yml```  
 
 
+#### useful commands  
+- ```sudo update-alternatives --config java```  
 

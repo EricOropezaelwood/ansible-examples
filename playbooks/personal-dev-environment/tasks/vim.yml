@@ -1,0 +1,7 @@
+---
+- name: install developer tools
+  apt:
+    name:
+    - vim
+    - tree
+    state: latest
