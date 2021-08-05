@@ -1,0 +1,25 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+- name: Install gnupg, software-properties-common and curl
+  apt:
+    name:
+      - gnupg
+      - software-properties-common
+      - curl
+- name: Add the HashiCorp GPG key
+  apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+- name: Add the official HashiCorp Linux repository
+  apt_repository:
+    repo: deb [arch=amd64] https://apt.releases.hashicorp.com {{ ubuntu_release }} main
+    state: present
+- name: Update apt cache
+  apt:
+    update_cache: yes
+- name: Install Terraform
+  apt:
+    name:
+      - terraform

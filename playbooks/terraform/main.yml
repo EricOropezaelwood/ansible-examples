@@ -1,0 +1,10 @@
+---
+- name: terraform
+  hosts: local
+  vars:
+    - ansible_python_interpreter: /usr/bin/python3
+  # to run without ssh, enables localhost use on a personal machine
+  connection: local
+  become: yes
+  roles:
+    - terraform
