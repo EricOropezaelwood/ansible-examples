@@ -42,3 +42,7 @@ project
 Install terraform on host machine  
 ```ansible-playbook playbooks/terraform/main.yml```  
 
+### AWS  
+To run on AWS on an EC2 we need a hosts file and to place the public ip of the  
+instance in there. Also, be able to connect via ssh.  
+```ansible-playbook -i hosts playbooks/terraform/main.yml -u <USER> --private-key=~/.ssh/<YOUR-KEY>```
