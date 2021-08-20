@@ -2,6 +2,14 @@
 
 ![alt text](https://geekflare.com/wp-content/uploads/2019/06/ansible-beginner-1200x385.jpg)  
 
+## Table of Contents
+* [What it do](#What-it-do)
+* [Directory Structure](#Directory-Structure)
+* [Configuration](#Configuration)
+* [Call Roles in a Playbook](#Call-Roles-in-a-Playbook)
+* [Run a playbook](#Run-a-playbook)
+* [AWS](#AWS)
+* [Errors](#Errors)
 
 ## What it do  
 Makes stuff like ```apt install tree``` easy to manage and run automatically  
